@@ -345,7 +345,7 @@ mrgActivity_df<-select(mrgActivity_df, -c("na.rm","meanSteps", "imputeRow"))
 >>  
 >> The resulting datset has a column clean up after the imputation is confirmed.  
 >  
-
+  
 4.  Similar to part 1 of this assignment.  
     a.Make a histogram of the total number of steps taken each day and   
     b.Calculate and report the mean and median total number of steps taken per day. 
