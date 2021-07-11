@@ -352,6 +352,8 @@ mrgActivity_df&lt;-left_join(activity_df,dayIntMeanSteps,by=c(&quot;dayOfWeek&qu
 mrgActivity_df$imputeRow&lt;-FALSE
 mrgActivity_df$imputeRow[is.na(mrgActivity_df$steps)]&lt;-TRUE
 mrgActivity_df$steps[is.na(mrgActivity_df$steps)]&lt;-mrgActivity_df$meanSteps[is.na(mrgActivity_df$steps)]
+
+
 # Check imputed row count matches the NA count and that the stats for the unimputed rows remains as in Step 1.
 #Non-imputed
 summary(mrgActivity_df[!mrgActivity_df$imputeRow,])</code></pre>
@@ -470,7 +472,8 @@ First part (with imputations): 
 </div>
 <div id="actual-weekday-weekend-plot" class="section level2">
 <h2>Actual Weekday / Weekend Plot</h2>
-<pre class="r"><code>#Preferred look:  ggplot(data=intervalSteps, aes(x=interval, y=steps)) + geom_point(color=&quot;blue&quot;) +
+<pre class="r"><code>#Preferred look:  
+#ggplot(data=intervalSteps, aes(x=interval, y=steps)) + geom_point(color=&quot;blue&quot;) +
 #        geom_line(color=&quot;black&quot;) + facet_grid(rows = vars(weekPart)) +
 #        ylab(&quot;Average Number of Steps&quot;) + xlab(&quot;Interval&quot;) +
 #        theme_bw() + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
